@@ -5,6 +5,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "start": "node src/estimator.js",
     "lint": "eslint ./src/"
   },
   "dependencies": {
