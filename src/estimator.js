@@ -156,6 +156,7 @@ app.post('/api/v1/on-covid-19/xml', async (req, res) => {
 });
 
 app.get('/api/v1/on-covid-19/logs', async (req, res) => {
+  res.header('Content-Type', 'text/plain');
   res.status(200).send(fetchLogs());
 });
 
