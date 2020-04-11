@@ -1,2 +1,3 @@
 POST		/api/v1/on-covid-19/		200		341.008769 ms
 POST		/api/v1/on-covid-19/xml		200		25.923240999999997 ms
+POST		/api/v1/on-covid-19/xml		200		1287.541541 ms
