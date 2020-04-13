@@ -5,7 +5,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const EasyXml = require('easyxml');
 
-const { covid19ImpactEstimator } = require('./estimator');
+const covid19ImpactEstimator = require('./estimator');
 
 const app = express();
 const port = process.env.PORT || 3000;
