@@ -1,7 +1,6 @@
 /* eslint-disable linebreak-style */
 
 const covid19ImpactEstimator = (data) => {
-
   const toDays = () => {
     let { timeToElapse } = data;
     if (data.periodType === 'weeks') {
@@ -12,13 +11,12 @@ const covid19ImpactEstimator = (data) => {
     return timeToElapse;
   };
 
-
   const currentlyInfected = (type) => (
     Math.trunc(data.reportedCases * type)
   );
 
   const infectionsByRequestedTime = (type) => {
-    const factor = Math.trunc(toDays / 3);
+    const factor = Math.trunc(toDays() / 3);
     return Math.trunc(currentlyInfected(type) * (2 ** factor));
   };
 
@@ -40,7 +38,7 @@ const covid19ImpactEstimator = (data) => {
 
   const dollarsInFlight = (type) => (
     Number((infectionsByRequestedTime(type) * data.region.avgDailyIncomeInUSD
-    * data.region.avgDailyIncomePopulation * timeToElapse).toFixed(2))
+    * data.region.avgDailyIncomePopulation * toDays()).toFixed(2))
   );
 
   const impact = {
