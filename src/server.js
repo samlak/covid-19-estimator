@@ -32,7 +32,7 @@ const fetchLogs = () => {
 
 const addLogs = (method, path, status, time) => {
   let logs = fetchLogs();
-  const log = `${method}\t\t${path}\t\t${status}\t\t${Math.trunc(time)}\n`;
+  const log = `${method}\t\t${path}\t\t${status}\t\t${time}\n`;
   logs += log;
   fs.writeFileSync('logs.txt', logs);
 };
@@ -49,7 +49,7 @@ app.post('/api/v1/on-covid-19', async (req, res) => {
     });
   }
   const diff = process.hrtime(time);
-  const responseTime = `${(diff[0] * NS_PER_SEC + diff[1]) * MS_PER_NS} ms`;
+  const responseTime = `${Math.trunc((diff[0] * NS_PER_SEC + diff[1]) * MS_PER_NS)} ms`;
   addLogs(req.method, req.path, res.statusCode, responseTime);
 });
 
