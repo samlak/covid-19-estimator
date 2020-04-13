@@ -32,7 +32,7 @@ const fetchLogs = () => {
 
 const addLogs = (method, path, status, time) => {
   let logs = fetchLogs();
-  const log = `${method}\t\t${path}\t\t${status}\t\t${time}\n`;
+  const log = `${method}\t\t${path}\t\t${status}\t\t${Math.trunc(time)}\n`;
   logs += log;
   fs.writeFileSync('logs.txt', logs);
 };
