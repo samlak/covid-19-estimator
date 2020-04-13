@@ -42,6 +42,7 @@ app.post('/api/v1/on-covid-19', async (req, res) => {
   const time = process.hrtime();
   try {
     const estimator = covid19ImpactEstimator(req.body);
+    res.header('Content-Type', 'application/json');
     res.status(200).send(estimator);
   } catch (e) {
     res.status(400).send({
