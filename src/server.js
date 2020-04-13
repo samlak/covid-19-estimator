@@ -50,7 +50,7 @@ app.post('/api/v1/on-covid-19', async (req, res) => {
     });
   }
   const diff = process.hrtime(time);
-  const responseTime = `${((diff[0] * NS_PER_SEC + diff[1]) * MS_PER_NS).toFixed(2)} ms`;
+  const responseTime = `${Math.trunc((diff[0] * NS_PER_SEC + diff[1]) * MS_PER_NS)} ms`;
   addLogs(req.method, req.path, res.statusCode, responseTime);
 });
 
@@ -66,7 +66,7 @@ app.post('/api/v1/on-covid-19/json', async (req, res) => {
     });
   }
   const diff = process.hrtime(time);
-  const responseTime = `${((diff[0] * NS_PER_SEC + diff[1]) * MS_PER_NS).toFixed(2)} ms`;
+  const responseTime = `${Math.trunc((diff[0] * NS_PER_SEC + diff[1]) * MS_PER_NS)} ms`;
   addLogs(req.method, req.path, res.statusCode, responseTime);
 });
 
@@ -84,7 +84,7 @@ app.post('/api/v1/on-covid-19/xml', async (req, res) => {
     );
   }
   const diff = process.hrtime(time);
-  const responseTime = `${((diff[0] * NS_PER_SEC + diff[1]) * MS_PER_NS).toFixed(2)} ms`;
+  const responseTime = `${Math.trunc((diff[0] * NS_PER_SEC + diff[1]) * MS_PER_NS)} ms`;
   addLogs(req.method, req.path, res.statusCode, responseTime);
 });
 
@@ -94,7 +94,7 @@ app.get('/api/v1/on-covid-19/logs', async (req, res) => {
   res.header('Content-Type', 'text/plain');
   res.status(200).send(fetchLogs());
   const diff = process.hrtime(time);
-  const responseTime = `${((diff[0] * NS_PER_SEC + diff[1]) * MS_PER_NS).toFixed(2)} ms`;
+  const responseTime = `${Math.trunc((diff[0] * NS_PER_SEC + diff[1]) * MS_PER_NS)} ms`;
   addLogs(req.method, req.path, res.statusCode, responseTime);
 });
 
