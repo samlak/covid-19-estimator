@@ -49,7 +49,7 @@ app.post('/api/v1/on-covid-19', async (req, res) => {
     });
   }
   const diff = process.hrtime(time);
-  const responseTime = `${Math.trunc((diff[0] * NS_PER_SEC + diff[1]) * MS_PER_NS)} ms`;
+  const responseTime = `${(diff[0] * NS_PER_SEC + diff[1]) * MS_PER_NS} ms`;
   addLogs(req.method, req.path, res.statusCode, responseTime);
 });
 
