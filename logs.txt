@@ -8,3 +8,13 @@ POST		/api/v1/on-covid-19/		400		3097.1719749999997 ms
 POST		/api/v1/on-covid-19/		400		1.6236309999999998 ms
 POST		/api/v1/on-covid-19/		400		2537.31609 ms
 POST		/api/v1/on-covid-19/		200		720.8990319999999 ms
+POST		/api/v1/on-covid-19/		200		84.33402699999999 ms
+POST		/api/v1/on-covid-19/		200		37.538894 ms
+POST		/api/v1/on-covid-19/		200		102.417738 ms
+POST		/api/v1/on-covid-19/		200		17.044760999999998 ms
+POST		/api/v1/on-covid-19/		200		25.707175 ms
+POST		/api/v1/on-covid-19/		200		15.521222 ms
+POST		/api/v1/on-covid-19/		200		35.530288 ms
+POST		/api/v1/on-covid-19/		200		284.898689 ms
+POST		/api/v1/on-covid-19/		200		2.613979 ms
+POST		/api/v1/on-covid-19/		200		12.610812 ms
